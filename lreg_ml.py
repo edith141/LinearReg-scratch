@@ -53,15 +53,15 @@ def trainM(xData, yData, wt, bias, LR, iters):
         cost = costFun(xData, yData, wt, bias)
         costLog.append(cost)
 
-        if i%10 == 0:
-            print(f"iter={i}, wt={wt}, bias={bias}, cost={cost}")
-            costLog.append(cost)
+        # if i%10 == 0:
+        print(f"iter={i}, wt={wt}, bias={bias}, cost={cost}")
+            # costLog.append(cost)
         ranIters.append(i)
 
     
     return wt,bias,costLog,ranIters
 
-finalWt, finalBias, finalCostLog, itersRan = trainM(x_data, y_data, 0.0, 0.0, 0.003, 2800)
+finalWt, finalBias, finalCostLog, itersRan = trainM(x_data, y_data, 0.0, 0.0, 0.03, 1000)
 print(f"finalWt: {finalWt}")
 print(f"finalBias: {finalBias}")
 # print(f"costLog: {finalCostLog}")
@@ -80,6 +80,16 @@ plt.title("pred")
 plt.xlabel("x-values (independent)")
 plt.ylabel("y-values (dependent)")
 plt.legend()
+
+# plt.scatter(x_data, y_data, c="green", label="original data")
+# plt.plot(x_data, estYData, c="red")
+# plt.scatter(x_data, estYData, c="red", label="pred. data")
+# plt.title("original data")
+# plt.xlabel("x-values (independent)")
+# plt.ylabel("y-values (dependent)")
+# plt.legend()
+
+# plt.savefig("final result_mym.png")
 
 # plotting for 10th iter.
 # plt.scatter(x_data, y_data, c="green", label="original data")
@@ -130,3 +140,4 @@ print(r2_score(y_test, estYData))
 # plt.savefig("final result_sklearn.png")
 
 plt.show()
+
