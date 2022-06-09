@@ -49,7 +49,11 @@ $$
 
 Here, 
 >m, and b =  weight, and bias respectively. 
+
+
 >N = number of observations/data points (on an axis).
+
+
 >The 1/N $\sum_{i=1}^n$ part is the mean.
 
 ## Gradient Descent
