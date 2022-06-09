@@ -69,4 +69,14 @@ $w.r.t. 'b' (bias) = \frac{1}{N}\sum-2(y_i - (mx_i + b))$
 ## The model and results
 The algorithm/model improves the pridiction with each iteration (optimises wt and bias) moving towards the direction suggested by the slope of the cost function (the gradient).
 
-![alt text](zero iter.png)
+![initial state](/zero%20iter.png)
+![10th iter](/10th%20iter.png)
+![final res](/final%20result.png)
+
+## Comparing the results with that of the LR model in the sklearn library.
+The $R^2$ of sklearn LR model is: ~62%
+The $R^2$ of sklearn LR model is: ~62%
+
+Below are the best fit line and predicted Y values from both the models-
+![final sklearn](/final%20result_sklearn.png)
+![initial my model](/final%20result_mym.png)
