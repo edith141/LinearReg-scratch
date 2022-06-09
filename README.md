@@ -74,7 +74,8 @@ The algorithm/model improves the pridiction with each iteration (optimises wt an
 ![final res](/final%20result.png)
 
 ## Comparing the results with that of the LR model in the sklearn library.
-The $R^2$ of sklearn LR model is: 0.6374... 
+The $R^2$ of sklearn LR model is: 0.6374...
+
 The $R^2$ of sklearn LR model is: 0.6374...
 
 >~63.74% of variance in the dependent variable Y is explained by the change in X. 
