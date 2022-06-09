@@ -1,3 +1,5 @@
+# The libs are needed for plotting the data, 
+# and for the sklearn model only.
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression 
 from sklearn.metrics import r2_score
@@ -6,6 +8,7 @@ import numpy as np
 x_data = [1.0, 2.0, 4.3, 3.1, 5.2, 6.6]
 y_data = [2.5, 3.1, 3.9, 4.2, 5.3, 7.1]
 # x_test_data = [1.0, 4.0, 5.14, 3.2, 9.5, 4.65]
+# needed to test the sklearn model
 x_test_data = [1.0, 2.0, 4.3, 3.1, 5.2, 6.6]
 y_test_data = [2.8, 4.0, 4.5, 5.0, 4.7, 6.8]
 
@@ -61,7 +64,7 @@ def trainM(xData, yData, wt, bias, LR, iters):
 finalWt, finalBias, finalCostLog, itersRan = trainM(x_data, y_data, 0.0, 0.0, 0.003, 2800)
 print(f"finalWt: {finalWt}")
 print(f"finalBias: {finalBias}")
-print(f"costLog: {finalCostLog}")
+# print(f"costLog: {finalCostLog}")
 
 estYData = []
 for xd in x_data:
@@ -69,7 +72,7 @@ for xd in x_data:
     estYData.append(finalWt*xd + finalBias)
 
 
-# plotting
+# plotting 
 plt.scatter(x_data, y_data, c="green", label="original data")
 plt.plot(x_data, estYData, c="red")
 plt.scatter(x_data, estYData, c="red", label="pred. data")
@@ -94,12 +97,12 @@ plt.legend()
 # plt.xlabel("(MSE) cost fun")
 # plt.savefig("error-plot.png")
 
-plt.show()
 
 
-# Check using sklearn
 
-x_train = np.array(x_data).reshape((-1,1))
+# cross-check using sklearn LR model.
+
+x_train = np.array(x_data)
 y_train = np.array(y_data)
 x_test = np.array(x_test_data)
 y_test = np.array(y_test_data)
@@ -111,10 +114,10 @@ clf = LinearRegression(normalize=True)
 clf.fit(x_train,y_train)
 y_pred = clf.predict(x_test)
 
-print("DATA")
+print("R^2 from sklearn LR: ")
 print(r2_score(y_test,y_pred))
 
-print("My Data:")
+print("R^2 from this implementation:")
 print(r2_score(y_test, estYData))
 
 # plt.scatter(x_data, y_data, c="green", label="original data")
@@ -125,3 +128,5 @@ print(r2_score(y_test, estYData))
 # plt.ylabel("y-values (dependent)")
 # plt.legend()
 # plt.savefig("final result_sklearn.png")
+
+plt.show()
