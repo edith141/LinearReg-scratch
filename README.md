@@ -54,7 +54,7 @@ Here,
 >N = number of observations/data points (on an axis).
 
 
->The 1/N $\sum_{i=1}^n$ part is the mean.
+>The $\frac{1}{N}\sum_{i=1}^n$ part is the mean.
 
 ## Gradient Descent
 
@@ -68,3 +68,5 @@ $w.r.t. 'b' (bias) = \frac{1}{N}\sum-2(y_i - (mx_i + b))$
 
 ## The model and results
 The algorithm/model improves the pridiction with each iteration (optimises wt and bias) moving towards the direction suggested by the slope of the cost function (the gradient).
+
+![alt text](/zero iter.png)
