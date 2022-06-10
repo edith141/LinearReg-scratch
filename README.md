@@ -1,5 +1,5 @@
 # ML
-A simple implementation of Linear Regression from scratch. Basically a fancy hello world in ML, and to understand how it (LR, cost func, GD) works.
+An implementation of Linear Regression from scratch. Basically a rather fancy hello world in ML, and to understand how things (LR, cost func, GD) work.
 
 
 # Linear Regression implementation
